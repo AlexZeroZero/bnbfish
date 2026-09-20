@@ -1,0 +1,34 @@
+body{display:block;padding:0;background:#eae9e2}main{display:block;width:100%;padding:0}.review,.spec,.preview-caption,.statusbar,.home-indicator{display:none!important}.phone{width:100%;max-width:480px;height:100dvh;min-height:0;max-height:none;border:0;border-radius:0;margin:auto;box-shadow:0 0 60px #142c4130;--safe-top:env(safe-area-inset-top,0px)}.phone #module-page{bottom:calc(64px + env(safe-area-inset-bottom,0px))}.bottom-nav{padding-bottom:env(safe-area-inset-bottom,0px);height:calc(64px + env(safe-area-inset-bottom,0px))}.game{bottom:auto}.game-header{top:calc(16px + env(safe-area-inset-top,0px))}.modal{position:absolute}.bnb-warning{position:absolute;top:calc(env(safe-area-inset-top,0px) + 64px);left:14px;right:14px;z-index:14;background:#fff3cded;color:#6d552b;border:1px solid #cdb581;border-radius:7px;padding:5px 8px;font-size:9px;text-align:center;pointer-events:none}.bnb-warning[hidden]{display:none}.bnb-busy{font-size:11px;line-height:1.7;color:#577782;overflow-wrap:anywhere}.bnb-error{color:#a34f46;font-size:12px;line-height:1.7;overflow-wrap:anywhere}.bnb-actions{display:flex;gap:8px}.bnb-actions button{flex:1}.bnb-date{font-size:7px;color:#b3c5ce;margin-top:2px}.wallet-tools button{min-height:32px}.wallet-stats b{font-size:12px}.wallet-address{overflow-wrap:anywhere}.bnb-activity{padding:10px 0;border-bottom:1px solid #ddd8ca;font-size:11px;line-height:1.8;overflow-wrap:anywhere}.bnb-activity a{color:#8c744b}.portrait-notice{display:none}.sheet input{width:100%;min-width:0}.sheet-content{min-width:0}
+@media (orientation:landscape) and (max-height:540px) and (pointer:coarse){.portrait-notice{display:grid;position:fixed;inset:0;place-content:center;background:#f5f3ed;color:#29434e;z-index:999;text-align:center;font-size:18px}.phone{visibility:hidden}}
+
+/* Web viewport is the game window, not a simulated handset. */
+html,body{width:100%;height:100%;overflow:hidden}
+.phone{max-width:none;box-shadow:none}
+.fullscreen-toggle{position:absolute;right:68px;top:calc(20px + env(safe-area-inset-top,0px));z-index:6;display:flex;align-items:center;gap:6px;min-height:34px;padding:7px 10px;border:1px solid #ffffffb3;border-radius:8px;background:#eff6f0e8;color:#355564;font-size:11px;box-shadow:0 2px 8px #17384a15}
+.fullscreen-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.fullscreen-message{position:absolute;z-index:20;top:70px;left:50%;transform:translateX(-50%);max-width:90%;width:max-content;padding:10px 14px;border-radius:8px;background:#243c4af2;color:#fff;font-size:12px}
+.phone:has(#module-page:not([hidden])) .fullscreen-toggle{right:106px;top:calc(21px + env(safe-area-inset-top,0px));background:#fffefa;border-color:#d9d6cc}
+.phone:has(.modal:not([hidden])) .fullscreen-toggle{display:none}
+@media(min-width:600px){
+ .game-header{padding:24px 32px 0}.fullscreen-toggle{top:28px;right:84px}
+ .location{left:36px;top:115px}.location h2{font-size:42px}
+ .map-tools{right:32px;top:106px}.recenter{left:36px;top:255px}
+ .fishing-controls{left:50%;right:auto;transform:translateX(-50%);width:400px;max-width:calc(100% - 48px);bottom:24px}
+ .lake-sound-toggle,.lake-music-toggle{right:32px!important}.sound-credit{right:40px!important}
+ .lake-sound-toggle{top:232px!important}.lake-music-toggle{top:271px!important}.sound-credit{top:310px!important}
+ .bnb-warning{left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:calc(100% - 380px);top:25px}
+ .bottom-nav{justify-content:center;gap:30px}.bottom-nav button{flex:0 1 150px}
+ .module-header{padding:18px 32px 15px}.module-header h1{font-size:28px}
+ .phone:has(#module-page:not([hidden])) .fullscreen-toggle{right:120px;top:28px}
+ .module-scroll{padding:0 32px 28px}.nft-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:14px}
+ .nft-card[data-tier]{height:205px}.nft-card[data-tier] .nft-image{height:132px}.nft-card[data-tier] .nft-image .fish-art{height:96px;top:33px}
+ .nft-card .nft-image>.frame-engraving{height:203px}
+ .phone #module-page[data-page=wallet] .module-scroll{width:min(100%,900px);align-self:center}
+ .phone #module-page[data-page=market] .module-scroll{width:min(100%,1100px);align-self:center}
+ .market-hero{min-height:260px;padding:30px}.market-hero h2{width:auto;font-size:32px}.market-hero-art{width:290px;height:205px;right:35px;top:20px}
+ .sheet{width:440px;max-width:calc(100% - 40px);max-height:calc(100% - 48px);margin:auto;border-radius:18px}.modal{align-items:center;justify-content:center}
+}
+@media(max-width:380px){.fullscreen-toggle span{display:none}.fullscreen-toggle{right:66px;padding:7px}.phone:has(#module-page:not([hidden])) .fullscreen-toggle{right:93px}}
+
+/* Flex reserves navigation height; do not shift the lake upward a second time. */
+.phone>.game{bottom:auto}

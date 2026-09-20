@@ -1,0 +1,78 @@
+[
+  {
+    "key": "common",
+    "rows": 5,
+    "names": [
+      "草鱼",
+      "鳊鱼",
+      "团头鲂",
+      "白条",
+      "麦穗鱼",
+      "棒花鱼",
+      "鳑鲏",
+      "黄鳝",
+      "沙塘鳢",
+      "银鮈"
+    ],
+    "subjects": "row1 grass carp long olive silver torpedo with large scales; bream Parabramis pekinensis tall flat diamond silver body pointed snout. row2 blunt snout bream Megalobrama amblycephala round deep silver body blunt head; white minnow Hemiculter leucisculus slender bright silver upward mouth. row3 topmouth gudgeon Pseudorasbora parva small bronze elongated minnow dark lateral stripe; Abbottina rivularis mottled brown gudgeon with broad head and spotted fins. row4 bitterling Rhodeus ocellatus small tall oval body iridescent pink blue patch; Asian swamp eel Monopterus albus very long smooth brown eel NO paired fins gracefully curved. row5 dark sleeper Odontobutis obscura short stocky mottled brown fish huge rounded pectoral fins; silver gudgeon Squalidus argentatus slender silvery spotted small fish.",
+    "prompt": "Use case: stylized-concept. ONE production fish collectible sprite ATLAS, common grade. EXACT 2 equal columns by 5 equal rows. Canvas ratio 3:5. Each cell 1.5:1 aspect. Subjects in reading order: row1 grass carp long olive silver torpedo with large scales; bream Parabramis pekinensis tall flat diamond silver body pointed snout. row2 blunt snout bream Megalobrama amblycephala round deep silver body blunt head; white minnow Hemiculter leucisculus slender bright silver upward mouth. row3 topmouth gudgeon Pseudorasbora parva small bronze elongated minnow dark lateral stripe; Abbottina rivularis mottled brown gudgeon with broad head and spotted fins. row4 bitterling Rhodeus ocellatus small tall oval body iridescent pink blue patch; Asian swamp eel Monopterus albus very long smooth brown eel NO paired fins gracefully curved. row5 dark sleeper Odontobutis obscura short stocky mottled brown fish huge rounded pectoral fins; silver gudgeon Squalidus argentatus slender silvery spotted small fish. Premium naturalistic polished 3D game inventory illustration, beautiful fine scales, translucent detailed fin rays, lifelike wet highlights, anatomically distinctive silhouettes. Elegant natural freshwater colors, crisp fine material detail. All specimens face left, fully visible with NO clipped fins, tails or snouts. Critically leave 12% empty padding INSIDE EVERY cell around each fish; NEVER cross cell boundaries, centered in each cell. Solid uniform very pale icy blue #edf5fb background throughout. No text, no labels, no grid, no checkerboard, no shadows, no scenery. Do not draw generic duplicated carp. Eels must be slender long curved bodies; paddlefishes must have different distinct spoon versus sword shaped snouts.",
+    "mode": "built-in image_gen"
+  },
+  {
+    "key": "rare",
+    "rows": 4,
+    "names": [
+      "黄尾鲴",
+      "赤眼鳟",
+      "银鲴",
+      "鲮鱼",
+      "斑鳠",
+      "虹鳟",
+      "丁鱥",
+      "罗非鱼"
+    ],
+    "subjects": "row1 yellowfin Xenocypris davidi silver compressed body bright yellow tail; red-eye barbel Squaliobarbus curriculus elongated bronze fish with red eyes. row2 Xenocypris argentea silver fine-scaled body tiny downturned mouth; mud carp Cirrhinus molitorella olive silver body small head dusky dorsal. row3 spotted mystus catfish Hemibagrus guttatus long slender cream brown body irregular black spots long barbels forked tail; rainbow trout Oncorhynchus mykiss silver body pink lateral band black dots. row4 tench Tinca tinca deep olive golden body tiny scales rounded dark fins red eye; Nile tilapia Oreochromis niloticus deep grey body long spiny dorsal and vertical striped tail.",
+    "prompt": "Use case: stylized-concept. ONE production fish collectible sprite ATLAS, rare grade. EXACT 2 equal columns by 4 equal rows. Canvas ratio 3:4. Each cell 1.5:1 aspect. Subjects in reading order: row1 yellowfin Xenocypris davidi silver compressed body bright yellow tail; red-eye barbel Squaliobarbus curriculus elongated bronze fish with red eyes. row2 Xenocypris argentea silver fine-scaled body tiny downturned mouth; mud carp Cirrhinus molitorella olive silver body small head dusky dorsal. row3 spotted mystus catfish Hemibagrus guttatus long slender cream brown body irregular black spots long barbels forked tail; rainbow trout Oncorhynchus mykiss silver body pink lateral band black dots. row4 tench Tinca tinca deep olive golden body tiny scales rounded dark fins red eye; Nile tilapia Oreochromis niloticus deep grey body long spiny dorsal and vertical striped tail. Premium naturalistic polished 3D game inventory illustration, beautiful fine scales, translucent detailed fin rays, lifelike wet highlights, anatomically distinctive silhouettes. Elegant natural freshwater colors, crisp fine material detail. All specimens face left, fully visible with NO clipped fins, tails or snouts. Critically leave 12% empty padding INSIDE EVERY cell around each fish; NEVER cross cell boundaries, centered in each cell. Solid uniform very pale icy blue #edf5fb background throughout. No text, no labels, no grid, no checkerboard, no shadows, no scenery. Do not draw generic duplicated carp. Eels must be slender long curved bodies; paddlefishes must have different distinct spoon versus sword shaped snouts.",
+    "mode": "built-in image_gen"
+  },
+  {
+    "key": "precious",
+    "rows": 3,
+    "names": [
+      "松江鲈",
+      "河鲈",
+      "银鲑",
+      "马口鱼",
+      "宽鳍鱲",
+      "斑鳜"
+    ],
+    "subjects": "row1 roughskin sculpin Trachidermus fasciatus flattened broad head huge fan pectorals mottled brown body; European perch Perca fluviatilis green yellow body black vertical bars bright orange pelvic fins. row2 coho salmon Oncorhynchus kisutch streamlined silver body black spots on upper back; horse-mouth Opsariichthys bidens long blue olive fish prominent wide mouth orange fins. row3 Zacco platypus broad fin chub iridescent blue pink vertical bars elegantly broad warm red fins; spotted mandarin Siniperca scherzeri tall cream body discrete round black spots tall spiny dorsal.",
+    "prompt": "Use case: stylized-concept. ONE production fish collectible sprite ATLAS, precious grade. EXACT 2 equal columns by 3 equal rows. Canvas ratio 3:3. Each cell 1.5:1 aspect. Subjects in reading order: row1 roughskin sculpin Trachidermus fasciatus flattened broad head huge fan pectorals mottled brown body; European perch Perca fluviatilis green yellow body black vertical bars bright orange pelvic fins. row2 coho salmon Oncorhynchus kisutch streamlined silver body black spots on upper back; horse-mouth Opsariichthys bidens long blue olive fish prominent wide mouth orange fins. row3 Zacco platypus broad fin chub iridescent blue pink vertical bars elegantly broad warm red fins; spotted mandarin Siniperca scherzeri tall cream body discrete round black spots tall spiny dorsal. Premium naturalistic polished 3D game inventory illustration, beautiful fine scales, translucent detailed fin rays, lifelike wet highlights, anatomically distinctive silhouettes. Elegant natural freshwater colors, crisp fine material detail. All specimens face left, fully visible with NO clipped fins, tails or snouts. Critically leave 12% empty padding INSIDE EVERY cell around each fish; NEVER cross cell boundaries, centered in each cell. Solid uniform very pale icy blue #edf5fb background throughout. No text, no labels, no grid, no checkerboard, no shadows, no scenery. Do not draw generic duplicated carp. Eels must be slender long curved bodies; paddlefishes must have different distinct spoon versus sword shaped snouts.",
+    "mode": "built-in image_gen"
+  },
+  {
+    "key": "exceptional",
+    "rows": 2,
+    "names": [
+      "花鳗鲡",
+      "哲罗鲑",
+      "细鳞鲑",
+      "川陕哲罗鲑"
+    ],
+    "subjects": "row1 giant mottled eel Anguilla marmorata long serpentine marbled olive eel small paired pectoral fins continuous dorsal gracefully curved; Siberian taimen Hucho taimen big long predatory bronze silver salmonid red tail dark spots. row2 lenok Brachymystax lenok slender bronze salmonid many small black spots orange fins short pointed snout; Sichuan taimen Hucho bleekeri olive gold salmonid large scattered dark spots head and body golden red fins, different shape and pose than Siberian taimen.",
+    "prompt": "Use case: stylized-concept. ONE production fish collectible sprite ATLAS, exceptional grade. EXACT 2 equal columns by 2 equal rows. Canvas ratio 3:2. Each cell 1.5:1 aspect. Subjects in reading order: row1 giant mottled eel Anguilla marmorata long serpentine marbled olive eel small paired pectoral fins continuous dorsal gracefully curved; Siberian taimen Hucho taimen big long predatory bronze silver salmonid red tail dark spots. row2 lenok Brachymystax lenok slender bronze salmonid many small black spots orange fins short pointed snout; Sichuan taimen Hucho bleekeri olive gold salmonid large scattered dark spots head and body golden red fins, different shape and pose than Siberian taimen. Premium naturalistic polished 3D game inventory illustration, beautiful fine scales, translucent detailed fin rays, lifelike wet highlights, anatomically distinctive silhouettes. Extraordinary museum hero quality, rich warm gold reflections and exceptionally fine surface detail. All specimens face left, fully visible with NO clipped fins, tails or snouts. Critically leave 12% empty padding INSIDE EVERY cell around each fish; NEVER cross cell boundaries, centered in each cell. Solid uniform very pale icy blue #edf5fb background throughout. No text, no labels, no grid, no checkerboard, no shadows, no scenery. Do not draw generic duplicated carp. Eels must be slender long curved bodies; paddlefishes must have different distinct spoon versus sword shaped snouts.",
+    "mode": "built-in image_gen"
+  },
+  {
+    "key": "legendary",
+    "rows": 2,
+    "names": [
+      "长江鲟",
+      "白鲟",
+      "匙吻鲟"
+    ],
+    "subjects": "row1 Yangtze sturgeon Acipenser dabryanus stocky grey bronze sturgeon short blunt snout five rows of bony scutes asymmetrical tail; Chinese paddlefish Psephurus gladius historically extinct, very long narrow SWORD-like pointed snout, silver white belly dark grey back, powerful large body forked asymmetrical tail, full long snout visible. row2 American paddlefish Polyodon spathula broad flat SPOON shaped rostrum, smooth slate silver skin long gill flap and heterocercal tail, entirely distinct from sword snout above; bottom right cell EMPTY.",
+    "prompt": "Use case: stylized-concept. ONE production fish collectible sprite ATLAS, legendary grade. EXACT 2 equal columns by 2 equal rows. Canvas ratio 3:2. Each cell 1.5:1 aspect. Subjects in reading order: row1 Yangtze sturgeon Acipenser dabryanus stocky grey bronze sturgeon short blunt snout five rows of bony scutes asymmetrical tail; Chinese paddlefish Psephurus gladius historically extinct, very long narrow SWORD-like pointed snout, silver white belly dark grey back, powerful large body forked asymmetrical tail, full long snout visible. row2 American paddlefish Polyodon spathula broad flat SPOON shaped rostrum, smooth slate silver skin long gill flap and heterocercal tail, entirely distinct from sword snout above; bottom right cell EMPTY. Premium naturalistic polished 3D game inventory illustration, beautiful fine scales, translucent detailed fin rays, lifelike wet highlights, anatomically distinctive silhouettes. Extraordinary museum hero quality, rich warm gold reflections and exceptionally fine surface detail. All specimens face left, fully visible with NO clipped fins, tails or snouts. Critically leave 12% empty padding INSIDE EVERY cell around each fish; NEVER cross cell boundaries, centered in each cell. Solid uniform very pale icy blue #edf5fb background throughout. No text, no labels, no grid, no checkerboard, no shadows, no scenery. Do not draw generic duplicated carp. Eels must be slender long curved bodies; paddlefishes must have different distinct spoon versus sword shaped snouts.",
+    "mode": "built-in image_gen"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "index.html": {
+    "status": 200,
+    "csp": true,
+    "newVisuals": true
+  },
+  "surface-craft.js": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  },
+  "lake3d.js": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  },
+  "fish-motion.js": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  }
+}

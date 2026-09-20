@@ -1,0 +1,23 @@
+{
+  "index.html": {
+    "status": 200,
+    "csp": true,
+    "newBuild": true,
+    "integrityMatches": true
+  },
+  "app.bundle.js": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  },
+  "dock.css": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  },
+  "locale-layout.css": {
+    "status": 200,
+    "csp": true,
+    "hashMatches": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "/": {
+    "status": "HTTP/1.1 200 OK",
+    "newBuild": true,
+    "integrityMatches": true,
+    "csp": true
+  },
+  "/app.bundle.js": {
+    "status": "HTTP/1.1 200 OK",
+    "hashMatches": true
+  },
+  "/global-fish.css": {
+    "status": "HTTP/1.1 200 OK",
+    "hashMatches": true
+  },
+  "/api/global-catches": {
+    "status": 200,
+    "chainId": 56,
+    "contract": "0x84A26C7d59f600120653A41769CE08174e34642f",
+    "total": 18,
+    "speciesCount": 15,
+    "stale": false,
+    "blockNumber": 122019055,
+    "speciesSum": 18,
+    "latestCount": 12
+  },
+  "/api/automation": {
+    "status": "HTTP/1.1 200 OK",
+    "data": {
+      "contract": "0x84A26C7d59f600120653A41769CE08174e34642f",
+      "ready": true,
+      "code": "idle",
+      "updatedAt": 1789470195073
+    }
+  }
+}

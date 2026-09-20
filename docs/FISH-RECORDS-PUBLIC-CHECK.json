@@ -1,0 +1,26 @@
+{
+  "assets": [
+    {
+      "path": "/",
+      "verified": true
+    },
+    {
+      "path": "/app.bundle.js?v=fish-records-16",
+      "verified": true
+    },
+    {
+      "path": "/global-fish.css?v=fish-thumbs-2",
+      "verified": true
+    },
+    {
+      "path": "/rod-records.css?v=1",
+      "verified": true
+    }
+  ],
+  "automation": {
+    "contract": "0x84A26C7d59f600120653A41769CE08174e34642f",
+    "ready": false,
+    "code": "needs-funding",
+    "updatedAt": 1789524721886
+  }
+}

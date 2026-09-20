@@ -1,0 +1,14 @@
+{
+  "tool": "built-in imagegen",
+  "sourceIds": {
+    "legendary-v1": "9aa24f94-ef78-42bb-9587-bde412b3bc56",
+    "exceptional-v1": "89d58efc-d847-481c-8aa3-1e2b0f3398ce",
+    "rare-expansion-v2": "0b9e86c5-8f4c-4fc0-968e-95d4aea1d7f0",
+    "exceptional-expansion-v2": "1f32c2d1-ea75-4b30-8439-fce02279d082",
+    "legendary-expansion-v2": "32a20b86-3a76-4da3-af9a-59c7f76ce13f",
+    "aquatic-invertebrates-v1": "2a3d65a1-5c33-4753-a472-5f3ad253d77b",
+    "sea-invertebrates-v1": "823ff727-8a68-4b31-a380-a3d637a1601f",
+    "underwater-v1": "6adeb309-c98e-455b-ae44-c1b7876b87be"
+  },
+  "usage": "Presentation derivatives only. Frozen NFT artwork remains in assets/fish-catalog."
+}

@@ -1,0 +1,11 @@
+packages:
+  - .
+allowBuilds:
+  esbuild: true
+  bufferutil: false
+  utf-8-validate: false
+
+overrides:
+  "ws@8": 8.21.0
+  tmp: 0.2.7
+

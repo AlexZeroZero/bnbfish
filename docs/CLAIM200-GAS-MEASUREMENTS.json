@@ -1,0 +1,40 @@
+{
+  "network": "local simulation only",
+  "gasPriceGweiAssumption": 0.05,
+  "scenarios": [
+    {
+      "participants": 1,
+      "eligible": 1,
+      "settlementGas": 314486,
+      "castGasMin": 353518,
+      "castGasMax": 353518,
+      "claimGas": [
+        281994
+      ]
+    },
+    {
+      "participants": 50,
+      "eligible": 50,
+      "settlementGas": 3019907,
+      "castGasMin": 260462,
+      "castGasMax": 353518,
+      "claimGas": [
+        281868,
+        284920,
+        284920
+      ]
+    },
+    {
+      "participants": 51,
+      "eligible": 50,
+      "settlementGas": 3424283,
+      "castGasMin": 260462,
+      "castGasMax": 353518,
+      "claimGas": [
+        282120,
+        284668,
+        267820
+      ]
+    }
+  ]
+}

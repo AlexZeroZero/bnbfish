@@ -1,0 +1,6 @@
+{
+  "retired": true,
+  "message": "Previous collection snapshot removed. Read the current contract tokenURI for an already claimed token.",
+  "contract": "0x60011EaC38503af422d0B9AFeC214a18aD99c11f",
+  "chainId": 56
+}

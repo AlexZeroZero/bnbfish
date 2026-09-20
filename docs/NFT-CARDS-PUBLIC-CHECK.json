@@ -1,0 +1,55 @@
+{
+  "publicSamples": [
+    {
+      "speciesId": 1030,
+      "status": 200,
+      "mime": "image/png",
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "da7581e2937460e46da8b4c69a9e59da38589ba10fe9d243af751893ceb13254"
+    },
+    {
+      "speciesId": 1056,
+      "status": 200,
+      "mime": "image/png",
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "20cdcbe1642cf11afb7f9b96c8104c2b9fc30bc4efc1391f04776c38a7e85a00"
+    },
+    {
+      "speciesId": 2001,
+      "status": 200,
+      "mime": "image/png",
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "221bc8a625de7a26b510a682147480325d71b507796b03d01fd88d80bbb06d31"
+    },
+    {
+      "speciesId": 1016,
+      "status": 200,
+      "mime": "image/png",
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "79c2942440d2b936f26897d917f79843459924f23046bd705c8852c1eb2e9431"
+    },
+    {
+      "speciesId": 3027,
+      "status": 200,
+      "mime": "image/png",
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "d5c05614898731df130d21800453eb60eb5ebfccb6b24559e939279ff9f7a361"
+    }
+  ],
+  "galleryCards": 100
+}

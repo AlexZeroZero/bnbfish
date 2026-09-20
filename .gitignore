@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+.runtime/
+release/
+artifacts/
+config/*.json
+!config/example.json

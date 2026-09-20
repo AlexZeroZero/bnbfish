@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/",
+    "verified": true
+  },
+  {
+    "path": "/copyright/",
+    "verified": true
+  },
+  {
+    "path": "/app.bundle.js?v=copyright-15",
+    "verified": true
+  },
+  {
+    "path": "/nft-api-entry.css?v=copyright-2",
+    "verified": true
+  },
+  {
+    "path": "/developers/nft/",
+    "verified": true
+  },
+  {
+    "path": "/nft-card-gallery.html",
+    "verified": true
+  }
+]

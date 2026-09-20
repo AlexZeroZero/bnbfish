@@ -1,0 +1,12 @@
+{
+  "historySave": 81149,
+  "proofBatches": [
+    294798,
+    289159,
+    288907,
+    288787
+  ],
+  "label": "Local test only: BNB system bytecode installed and ring slots seeded by test harness; no mainnet transactions",
+  "headersRecovered": 128,
+  "gasPriceGweiAssumption": 0.05
+}

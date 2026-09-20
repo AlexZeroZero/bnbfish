@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import ganache from 'ganache';import {BrowserProvider,ContractFactory} from 'ethers';import {catalog} from '../scripts/shared.mjs';
+const art=JSON.parse(fs.readFileSync('artifacts/claim100/BnbfishClaim100.json')),rules=JSON.parse(fs.readFileSync('artifacts/claim100/rules.json'));const report={label:'Local cost baseline; NOT hash-only architecture',chainId:1337,interval:100,maxAwards:50,gasPriceGweiAssumed:0.05,blockSecondsAssumed:0.45,scenarios:[]};
+async function setup(accounts){const rpc=ganache.provider({wallet:{totalAccounts:accounts},chain:{chainId:1337},miner:{blockGasLimit:40000000},logging:{quiet:true}});const p=new BrowserProvider(rpc,undefined,{cacheTimeout:-1});p.pollingInterval=10;const a=await p.getSigner(0),n=await new ContractFactory(art.abi,art.bytecode,a).deploy(await a.getAddress(),rules.hash,'https://bnbfish.trade/nft-images/',catalog);await n.waitForDeployment();await(await n.setPaused(false)).wait();return{rpc,p,n,mine:async target=>{while(BigInt(await rpc.request({method:'eth_blockNumber',params:[]}))<target)await rpc.request({method:'evm_mine',params:[]});},close:async()=>{p.destroy();await rpc.disconnect();}};}
+for(const participants of [1,50,51])test(`${participants} participants: cap50, distinct addresses, claim authorization and costs`,async()=>{const x=await setup(participants+1);const {n,p,mine}=x;try{
+ let castGas=0n;for(let start=0;start<participants;start+=10){await Promise.all(Array.from({length:Math.min(10,participants-start)},async(_,i)=>{const a=await p.getSigner(start+i),r=await(await n.connect(a).cast((start+i)%3,{gasLimit:500000})).wait();castGas+=r.gasUsed;}));}
+ await assert.rejects(()=>n.cast(1));assert.equal(await n.participantCount(1),BigInt(participants));const target=await n.targetBlock(1);await mine(target);
+ // At exactly the boundary a new cast goes to round 2 without waiting for round 1.
+ await(await n.connect(await p.getSigner(participants)).cast(0)).wait();assert.equal(await n.participantCount(2),1n);
+ await mine(target+3n);const hash=await(await n.captureHash(1)).wait();let allocationGas=0n,batches=0;
+ while((await n.rounds(1)).state!==2n){const r=await(await n.prepareRound(1,20,{gasLimit:12000000})).wait();allocationGas+=r.gasUsed;batches++;}
+ const expected=Math.min(participants,50);assert.equal((await n.rounds(1)).awards,BigInt(expected));assert.equal(await n.totalSupply(),0n);assert.equal(await n.totalReserved(),BigInt(expected));let selected=[];
+ for(let id=1;id<=participants;id++)if((await n.entries(id)).state===2n)selected.push(id);assert.equal(selected.length,expected);
+ const claims=[];for(const id of selected.slice(0,3)){const player=await p.getSigner((await n.entries(id)).player);const r=await(await n.connect(player).claim(id)).wait();claims.push(Number(r.gasUsed));await assert.rejects(()=>n.connect(player).claim(id));assert.equal(await n.ownerOf((await n.entries(id)).tokenId),await player.getAddress());}
+ const first=selected[0],stranger=await p.getSigner(participants);await assert.rejects(()=>n.connect(stranger).claim(first));
+ const row={participants,awards:expected,castGasTotal:Number(castGas),hashGas:Number(hash.gasUsed),allocationGas:Number(allocationGas),allocationTransactions:batches,claimGasSamples:claims};report.scenarios.push(row);fs.writeFileSync('docs/CLAIM100-GAS-MEASUREMENTS.json',JSON.stringify(report,null,2));console.log(JSON.stringify(row));
+ }finally{await x.close();}});
+

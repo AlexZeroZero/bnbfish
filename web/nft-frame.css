@@ -1,0 +1,88 @@
+@font-face{font-family:'Bnbfish Serif';src:url('assets/collectibles/noto-serif-sc.woff2') format('woff2');font-weight:200 900;font-display:swap}
+/* Approved underwater collectible direction: continuous art, engraved foil, live data. */
+[data-tier=common]{--frame-ink:#344d62;--frame-edge:#90a6b6;--frame-bright:#f8fcff;--frame-base:#a5b5c3;--frame-deep:#465e70;--frame-wash:#edf4fa}
+[data-tier=rare]{--frame-ink:#17577f;--frame-edge:#438ac1;--frame-bright:#d8faff;--frame-base:#6298c8;--frame-deep:#143d68;--frame-wash:#e7f5ff}
+[data-tier=precious]{--frame-ink:#62468b;--frame-edge:#997acb;--frame-bright:#f2e8ff;--frame-base:#b39bdb;--frame-deep:#3b285f;--frame-wash:#f2edff}
+[data-tier=exceptional]{--frame-ink:#955775;--frame-edge:#c78a9e;--frame-bright:#fff0dd;--frame-base:#dfabba;--frame-deep:#5e304b;--frame-wash:#fff0f5}
+[data-tier=legendary]{--frame-ink:#8b6023;--frame-edge:#ba8839;--frame-bright:#fff3c1;--frame-base:#d3ac65;--frame-deep:#4e341b;--frame-wash:#fff8e2}
+
+
+.nft-card[data-tier],.specimen-detail[data-tier]{--foil:#b9c9d2;--foil-light:#f1f7f7;position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--foil);background:linear-gradient(180deg,#142b3200 20%,#12253130 44%,#0b1929ef 80%,#0b1725 100%),url('assets/collectibles/underwater-v1.png') center 32%/cover;box-shadow:0 4px 10px #18334529,inset 0 0 0 1px #ffffff6b;border-radius:11px;color:#fff}
+[data-tier=rare]{--foil:#80b9dc!important;--foil-light:#d5f5ff!important}
+[data-tier=precious]{--foil:#b59aca!important;--foil-light:#f6e7ff!important}
+[data-tier=exceptional]{--foil:#d4a3b2!important;--foil-light:#ffe3db!important}
+[data-tier=legendary]{--foil:#d7b67d!important;--foil-light:#fff1c9!important}
+.nft-card[data-tier]::before,.specimen-detail[data-tier]::before{content:'';position:absolute;inset:2px;border:1px solid color-mix(in srgb,var(--foil) 62%,transparent);border-radius:8px;z-index:6;pointer-events:none;box-shadow:inset 0 1px 1px #ffffff6b}
+.nft-card[data-tier]::after,.specimen-detail[data-tier]::after{content:'';position:absolute;inset:0;background:linear-gradient(118deg,transparent 18%,#ffffff13 26%,transparent 38%,transparent 65%,color-mix(in srgb,var(--foil) 13%,transparent) 82%,transparent);z-index:4;pointer-events:none}
+.nft-card[data-tier]{display:flex;flex-direction:column;min-width:0;height:174px;padding:0;transition:transform .2s,box-shadow .2s;text-align:left}
+.nft-card[data-tier] .nft-image{position:relative;isolation:auto;flex:none;height:109px;width:100%;margin:0;border:0;border-radius:0;background:transparent!important;overflow:visible}
+.nft-card[data-tier] .nft-image:after{display:none}
+.nft-card[data-tier] .nft-image .fish-art{position:absolute;left:2%;top:30px;z-index:2;width:96%;height:78px;margin:0!important;filter:drop-shadow(0 5px 4px #061d2b80);mix-blend-mode:normal}
+.nft-card[data-tier] .nft-status{position:absolute;top:12px;right:9px;left:auto;z-index:7;border:1px solid #e6f3f6aa;background:#19394555;color:#ecf8fb;border-radius:3px;padding:2px 3px;font:7px system-ui;letter-spacing:.02em}
+.nft-card[data-tier] .frame-band{position:absolute;left:10px;top:13px;z-index:5;display:flex;flex-direction:column;gap:2px;color:#e3eff5d9;font:7px Georgia,serif;letter-spacing:.04em}
+.frame-band>span{font:4px system-ui;letter-spacing:.09em;max-width:45px;line-height:1.3}
+.nft-card[data-tier] .nft-card-copy{display:flex;flex-direction:column;position:relative;z-index:3;padding:1px 10px 9px;gap:3px;min-height:0;margin:0;background:none;box-shadow:none;border-radius:0}
+.nft-card[data-tier] .rarity-label{writing-mode:horizontal-tb;align-self:auto;justify-self:auto;max-height:none;letter-spacing:.03em;padding:0;font-family:'Bnbfish Serif','Songti SC','Noto Serif CJK SC',serif;font-size:14px;font-weight:600;line-height:1.35;color:var(--rarity);text-shadow:0 1px 3px #081420}
+.nft-card[data-tier] .nft-card-copy>small{font-size:8px;color:var(--rarity);line-height:1.25;letter-spacing:.06em;padding:0}
+.nft-card[data-tier] .nft-card-copy>span{font-size:8px;color:#d0dde5;line-height:1.25;border-top:1px solid #d1e2e529;padding:4px 0 0;white-space:nowrap;letter-spacing:0}
+.frame-engraving{position:absolute;inset:0;pointer-events:none;z-index:6;color:var(--foil-light);opacity:.76}
+.frame-engraving svg{position:absolute;width:30px;height:26px;filter:drop-shadow(0 1px 0 #172b33)}
+.engraving-a{left:3px;top:3px}.engraving-b{right:3px;top:3px;transform:scaleX(-1)}.engraving-c{right:3px;bottom:3px;transform:scale(-1)}.engraving-d{left:3px;bottom:3px;transform:scaleY(-1)}
+.nft-card .nft-image>.frame-engraving{height:172px}
+[data-tier=common] .frame-engraving{opacity:.45}[data-tier=common] .frame-engraving svg{width:23px;height:20px}
+[data-tier=precious]::after{mix-blend-mode:screen}
+[data-tier=exceptional] .frame-engraving,[data-tier=legendary] .frame-engraving{opacity:.9}
+[data-tier=legendary] .frame-engraving svg{width:37px;height:31px}
+.frame-caustic{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 65% 0,#dcf4ed21,transparent 55%);z-index:1}
+.specimen-detail[data-tier]{display:flex;flex-direction:column;padding:14px 15px 10px;border-radius:16px;background-position:center 25%;box-shadow:0 7px 22px #122c4033,inset 0 0 0 1px #ffffff77}
+.specimen-detail[data-tier]::before{border-radius:13px;inset:3px}
+.specimen-detail .frame-engraving svg{width:57px;height:48px}
+.specimen-edition{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;font:12px Georgia,serif;color:#e1eef4;letter-spacing:.06em;height:27px;padding:0}
+.specimen-edition small{display:block;font:6px system-ui;letter-spacing:.12em;margin-top:3px}.specimen-edition>b{font:9px system-ui;letter-spacing:.03em;border:1px solid #deeff0a8;padding:3px 5px;border-radius:3px;color:#edf8fa;background:#132f4044}
+.sheet .specimen-detail .nft-detail-art,.sheet .specimen-detail .guide-detail-art{position:relative;isolation:isolate;margin:0 -10px;height:124px;border:0;border-radius:0;background:transparent!important;box-shadow:none;overflow:visible}
+.sheet .specimen-detail .fish-art{position:relative;z-index:2;width:100%;height:121px;margin:0;filter:drop-shadow(0 7px 5px #061b2b99);mix-blend-mode:normal}
+.specimen-title{position:relative;z-index:3;display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:8px 0 10px;background:none;border-radius:0}
+.sheet .specimen-title h2{margin:0!important;font:600 25px/1.25 'Bnbfish Serif','Songti SC','Noto Serif CJK SC',serif;letter-spacing:.06em;color:var(--rarity);text-shadow:0 2px 5px #061722}
+.specimen-title>span{font-size:11px;color:var(--rarity);padding:0 0 3px;background:none;border:0;border-bottom:1px solid var(--foil)}
+.specimen-detail .result-meta{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;padding:10px 0 4px;background:none;border:0;border-top:1px solid #e1eaf138;border-radius:0}
+.specimen-detail .result-meta>div{padding:0 8px;background:none;border:0;border-right:1px solid #e1eaf126;border-radius:0;text-align:left}.specimen-detail .result-meta>div:first-child{padding-left:0}.specimen-detail .result-meta>div:last-child{border:0}
+.specimen-detail .result-meta small{font-size:9px;color:#b2c7d4}.specimen-detail .result-meta b{display:block;font:500 12px/1.4 system-ui;color:#eaf2f7;margin-top:4px}
+.specimen-foot{position:relative;z-index:3;display:block;font-size:7px;color:#a9c0ce;letter-spacing:.07em;text-align:right;padding:4px 0 0}
+.specimen-note{font-size:11px!important;line-height:1.6!important;margin:10px 0!important}
+.sheet:has(.specimen-detail){padding-top:40px}.sheet:has(.specimen-detail) .sheet-close{width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;top:7px;right:10px;font-size:22px;border-radius:50%;background:#e5edf3}
+.sheet:has(.specimen-detail) .asset-proof{margin-top:9px}
+.nft-card[data-tier]:active{transform:scale(.98)}.nft-card[data-tier]:focus-visible{outline:3px solid var(--frame-edge);outline-offset:3px}
+@media(hover:hover){.nft-card[data-tier]:hover{transform:translateY(-2px);box-shadow:0 7px 15px #18334540}}
+@media(prefers-reduced-motion:reduce){.nft-card[data-tier]{transition:none}}
+.water-tile[data-water='2']{background:linear-gradient(180deg,#183e591c,#183b5ba8),url('assets/sea-dusk.png') center/cover}.water-grid:has([data-water='2']){grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.water-grid:has([data-water='2']) .water-tile{height:125px;padding:10px 6px}.water-grid:has([data-water='2']) .water-tile b{font-size:17px}.water-grid:has([data-water='2']) .water-tile small{font-size:8px}.water-tile:disabled{opacity:.55}
+
+/* Keep engraving in the margin; never cover the name or chain metadata. */
+.nft-card[data-tier] .frame-band>span{display:none}
+.specimen-detail .frame-engraving{opacity:.62}
+.specimen-detail .frame-engraving svg{width:25px;height:21px}
+.specimen-detail .frame-engraving .engraving-c,.specimen-detail .frame-engraving .engraving-d{width:22px;height:18px}
+.nft-card[data-tier] .frame-engraving svg{width:22px;height:18px}
+.nft-card[data-tier] .frame-engraving{opacity:.6}
+
+/* Submerged light refraction: no rings, glitter dots or border flashing. */
+.rarity-motion{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;mix-blend-mode:screen;mask-image:linear-gradient(#000 15%,#0008 60%,transparent 90%)}
+.rarity-motion i{display:none}
+.rarity-motion::before{content:'';position:absolute;inset:-12%;background:url('assets/collectibles/caustics.svg') center/180% 150%;opacity:var(--water-light,.09);animation:submerged-light 14s ease-in-out infinite alternate;animation-play-state:paused!important;transform-origin:65% 10%}
+.rarity-motion::after{content:'';position:absolute;inset:-20% -10%;background:conic-gradient(from 164deg at 64% -10%,transparent 0deg,#d5edee24 5deg,transparent 9deg,#eaf7e917 15deg,transparent 19deg);opacity:var(--ray-light,.12);animation:submerged-rays 19s ease-in-out infinite alternate;animation-play-state:paused!important}
+[data-tier=common]{--water-light:.055;--ray-light:.10}
+[data-tier=rare]{--water-light:.13;--ray-light:.28}
+[data-tier=precious]{--water-light:.19;--ray-light:.38}
+[data-tier=exceptional]{--water-light:.23;--ray-light:.46}
+[data-tier=legendary]{--water-light:.29;--ray-light:.58}
+[data-tier=rare] .rarity-motion{filter:sepia(.2) hue-rotate(145deg)}
+[data-tier=precious] .rarity-motion{filter:sepia(.4) hue-rotate(215deg)}
+[data-tier=exceptional] .rarity-motion{filter:sepia(.5) hue-rotate(290deg)}
+[data-tier=legendary] .rarity-motion{filter:sepia(.65)}
+.motion-visible .rarity-motion::before,.motion-visible .rarity-motion::after{animation-play-state:running!important}
+.collectibles-paused .rarity-motion::before,.collectibles-paused .rarity-motion::after{animation-play-state:paused!important}
+.specimen-detail .rarity-motion{z-index:1}.specimen-detail .rarity-motion::before{background-size:140% 150%}
+@keyframes submerged-light{from{transform:translate(-2%,0) scale(1) rotate(-2deg)}to{transform:translate(3%,3%) scale(1.08,.96) rotate(2deg)}}
+@keyframes submerged-rays{from{transform:rotate(-3deg);opacity:calc(var(--ray-light)*.6)}to{transform:rotate(3deg);opacity:var(--ray-light)}}
+@media(prefers-reduced-motion:reduce){.rarity-motion::before,.rarity-motion::after{animation:none!important}}
+.specimen-detail[data-tier]::after{background:radial-gradient(ellipse at var(--touch-x,65%) var(--touch-y,15%),color-mix(in srgb,var(--foil-light) 16%,transparent),transparent 62%);opacity:.35;transition:opacity .5s;mix-blend-mode:screen}
+.specimen-detail.material-touch::after{opacity:.9}

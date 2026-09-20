@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import solc from 'solc';
+import {keccak256,toUtf8Bytes} from 'ethers';
+const manifest=JSON.parse(fs.readFileSync('config/species-v1.json','utf8'));
+const rules={version:'blockhash-continuous-v1-candidate',catalog:manifest.species,interval:10,minimumAge:10,hashDepth:3,emptyBps:0,maxSupply:2000000,tierCaps:[1200000,500000,150000,100000,50000],expiry:'skip-without-redraw',participation:'each-cast-persists-until-caught-or-withdrawn',mutation:'freeze-at-due-target',mintSpacing:10};
+const sources={'BnbfishBlockhash.sol':{content:fs.readFileSync('contracts/BnbfishBlockhash.sol','utf8')}};
+const settings={optimizer:{enabled:true,runs:200},viaIR:true,evmVersion:'paris',outputSelection:{'*':{'*':['abi','evm.bytecode.object','evm.deployedBytecode.object','evm.deployedBytecode.immutableReferences']}}};
+const out=JSON.parse(solc.compile(JSON.stringify({language:'Solidity',sources,settings}),{import:p=>{try{const content=fs.readFileSync(path.join('node_modules',p),'utf8');sources[p]={content};return {contents:content};}catch{return {error:'Missing '+p};}}}));
+for(const e of out.errors||[])if(e.severity==='error')throw Error(e.formattedMessage);
+const c=out.contracts['BnbfishBlockhash.sol'].BnbfishBlockhash;
+const runtimeBytes=c.evm.deployedBytecode.object.length/2;
+if(runtimeBytes>24576)throw Error('EIP-170 size limit');
+fs.mkdirSync('artifacts/blockhash',{recursive:true});
+fs.writeFileSync('artifacts/blockhash/BnbfishBlockhash.json',JSON.stringify({abi:c.abi,bytecode:'0x'+c.evm.bytecode.object,runtimeBytecode:'0x'+c.evm.deployedBytecode.object,runtimeBytes,immutableReferences:c.evm.deployedBytecode.immutableReferences,compiler:solc.version()},null,2));
+fs.writeFileSync('artifacts/blockhash/rules.json',JSON.stringify({rules,hash:keccak256(toUtf8Bytes(JSON.stringify(rules)))},null,2));
+fs.writeFileSync('artifacts/blockhash/verification-input.json',JSON.stringify({language:'Solidity',sources,settings},null,2));
+console.log('Candidate only; live ABI/config untouched. Runtime bytes:',runtimeBytes);

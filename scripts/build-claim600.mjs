@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import solc from 'solc';
+import {keccak256,toUtf8Bytes} from 'ethers';
+const manifest=JSON.parse(fs.readFileSync('config/species-v1.json','utf8'));
+const rules={version:'claim600-v1-candidate',catalog:manifest.species,interval:600,maxWinners:300,hashDepth:3,maxSupply:2000000,tierCaps:[1200000,500000,150000,100000,50000],participation:'one-address-per-round',expiry:'skip-without-redraw',allocation:'bounded-fisher-yates-reserve-before-claim',mint:'player-paid-claim',unclaimed:'reserved-without-expiry'};
+const sources={'BnbfishClaim600.sol':{content:fs.readFileSync('contracts/BnbfishClaim600.sol','utf8')}};
+const settings={optimizer:{enabled:true,runs:200},viaIR:true,evmVersion:'paris',outputSelection:{'*':{'*':['abi','evm.bytecode.object','evm.deployedBytecode.object','evm.deployedBytecode.immutableReferences']}}};
+const out=JSON.parse(solc.compile(JSON.stringify({language:'Solidity',sources,settings}),{import:p=>{try{const content=fs.readFileSync(path.join('node_modules',p),'utf8');sources[p]={content};return {contents:content};}catch{return {error:'Missing '+p};}}}));
+for(const e of out.errors||[])if(e.severity==='error')throw Error(e.formattedMessage);
+const c=out.contracts['BnbfishClaim600.sol'].BnbfishClaim600;
+const runtimeBytes=c.evm.deployedBytecode.object.length/2;
+if(runtimeBytes>24576)throw Error('EIP-170 size limit');
+fs.mkdirSync('artifacts/claim600',{recursive:true});
+fs.writeFileSync('artifacts/claim600/BnbfishClaim600.json',JSON.stringify({abi:c.abi,bytecode:'0x'+c.evm.bytecode.object,runtimeBytecode:'0x'+c.evm.deployedBytecode.object,runtimeBytes,immutableReferences:c.evm.deployedBytecode.immutableReferences,compiler:solc.version()},null,2));
+fs.writeFileSync('artifacts/claim600/rules.json',JSON.stringify({rules,hash:keccak256(toUtf8Bytes(JSON.stringify(rules)))},null,2));
+fs.writeFileSync('artifacts/claim600/verification-input.json',JSON.stringify({language:'Solidity',sources,settings},null,2));
+console.log('Candidate only; live ABI/config untouched. Runtime bytes:',runtimeBytes);

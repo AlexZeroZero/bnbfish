@@ -1,0 +1,4 @@
+{
+  "activate.html": "HTTP 200; exact hash match",
+  "activate.bundle.js": "HTTP 200; exact hash match"
+}

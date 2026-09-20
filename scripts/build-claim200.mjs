@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import solc from 'solc';
+import {keccak256,toUtf8Bytes} from 'ethers';
+const manifest=JSON.parse(fs.readFileSync('config/species-v1.json','utf8'));
+const rules={version:'claim200-v2-reserved-candidate',catalog:manifest.species,interval:200,maxWinners:50,hashDepth:3,maxSupply:2000000,tierCaps:[1200000,500000,150000,100000,50000],participation:'one-address-per-round',expiry:'historical-proof-recovery-no-redraw',allocation:'chronological-memory-fisher-yates-50-reservation',protocolFeeWei:'10000000000000',feeRecipient:'0x1bb935eeedd1338ebbb4faa79c1009314b8c520e',speciesTiming:'fixed-at-chronological-settlement',mint:'player-paid-claim',unclaimed:'permanently-reserved-no-expiry'};
+const sources={'BnbfishClaim200.sol':{content:fs.readFileSync('contracts/BnbfishClaim200.sol','utf8')},'HistoricalBlockhashStore.sol':{content:fs.readFileSync('contracts/HistoricalBlockhashStore.sol','utf8')}};
+const settings={optimizer:{enabled:true,runs:200},viaIR:true,evmVersion:'paris',outputSelection:{'*':{'*':['abi','evm.bytecode.object','evm.deployedBytecode.object','evm.deployedBytecode.immutableReferences']}}};
+const out=JSON.parse(solc.compile(JSON.stringify({language:'Solidity',sources,settings}),{import:p=>{try{const content=fs.readFileSync(path.join('node_modules',p),'utf8');sources[p]={content};return {contents:content};}catch{return {error:'Missing '+p};}}}));
+for(const e of out.errors||[])if(e.severity==='error')throw Error(e.formattedMessage);
+const c=out.contracts['BnbfishClaim200.sol'].BnbfishClaim200;
+const runtimeBytes=c.evm.deployedBytecode.object.length/2;
+if(runtimeBytes>24576)throw Error('EIP-170 size limit');
+fs.mkdirSync('artifacts/claim200',{recursive:true});
+fs.writeFileSync('artifacts/claim200/BnbfishClaim200.json',JSON.stringify({abi:c.abi,bytecode:'0x'+c.evm.bytecode.object,runtimeBytecode:'0x'+c.evm.deployedBytecode.object,runtimeBytes,immutableReferences:c.evm.deployedBytecode.immutableReferences,compiler:solc.version()},null,2));
+fs.writeFileSync('artifacts/claim200/rules.json',JSON.stringify({rules,hash:keccak256(toUtf8Bytes(JSON.stringify(rules)))},null,2));
+fs.writeFileSync('artifacts/claim200/verification-input.json',JSON.stringify({language:'Solidity',sources,settings},null,2));
+console.log('Candidate only; live ABI/config untouched. Runtime bytes:',runtimeBytes);

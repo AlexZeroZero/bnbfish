@@ -1,0 +1,18 @@
+{
+  "spent": "18451450000000",
+  "lifetime": "18451450000000",
+  "verifiedEntries": [
+    {
+      "id": 1,
+      "outcome": 2,
+      "speciesId": 1004
+    },
+    {
+      "id": 2,
+      "outcome": 2,
+      "speciesId": 1032
+    }
+  ],
+  "nextSettlementRound": "0",
+  "budgetPolicy": "prefer 20%, minimum 5%; signed worst-case cost bounded by remaining income, daily and per-tx caps and balance"
+}

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-15T05:59:38.066404+00:00",
+  "testsPassed": 11,
+  "testsFailed": 0,
+  "scope": "Local 1337 MockVRF and frontend adapter; not mainnet verification",
+  "mainnetDeployed": false,
+  "adminEOANonceObserved": 2,
+  "adminCreatedContractAddresses": [],
+  "fixedSupply": 2000000,
+  "roundBlocks": 10,
+  "minimumMintBlockGap": 10,
+  "emptyTicketBps": 2000,
+  "maxPerRound": 1,
+  "repeatTickets": true
+}

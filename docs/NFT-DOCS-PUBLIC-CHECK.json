@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/developers/nft/",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/developers/nft/catalog.json",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/developers/nft/read-nft.mjs",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/developers/nft/docs.css",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/developers/nft/example-token-18.json",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/nft-images/1018.png",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  },
+  {
+    "path": "/nft-card-gallery.html",
+    "status": 200,
+    "hashMatches": true,
+    "csp": true
+  }
+]

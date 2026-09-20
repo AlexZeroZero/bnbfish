@@ -1,0 +1,51 @@
+{
+  "?security=1789464053256931300": {
+    "status": 200,
+    "headers": {
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "no-referrer",
+      "x-frame-options": "DENY",
+      "strict-transport-security": "max-age=2592000",
+      "content-security-policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://bsc-dataseed.bnbchain.org https://bsc-rpc.publicnode.com https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests"
+    },
+    "newBuild": true,
+    "integrity": true
+  },
+  "api/config?security=9": {
+    "status": 200,
+    "headers": {
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "no-referrer",
+      "x-frame-options": "DENY",
+      "strict-transport-security": "max-age=2592000",
+      "content-security-policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://bsc-dataseed.bnbchain.org https://bsc-rpc.publicnode.com https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests"
+    }
+  },
+  "api/automation?security=9": {
+    "status": 200,
+    "headers": {
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "no-referrer",
+      "x-frame-options": "DENY",
+      "strict-transport-security": "max-age=2592000",
+      "content-security-policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://bsc-dataseed.bnbchain.org https://bsc-rpc.publicnode.com https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests"
+    },
+    "body": {
+      "contract": "0x84A26C7d59f600120653A41769CE08174e34642f",
+      "ready": true,
+      "code": "idle",
+      "updatedAt": 1789464060915
+    }
+  },
+  "app.bundle.js?v=security-9": {
+    "status": 200,
+    "headers": {
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "no-referrer",
+      "x-frame-options": "DENY",
+      "strict-transport-security": "max-age=2592000",
+      "content-security-policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://bsc-dataseed.bnbchain.org https://bsc-rpc.publicnode.com https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests"
+    },
+    "hashMatches": true
+  }
+}

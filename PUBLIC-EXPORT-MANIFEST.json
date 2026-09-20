@@ -1,0 +1,22 @@
+{
+  "name": "bnbfish-open-source",
+  "generatedAt": "2026-09-20",
+  "source": "BNBFISH BNB web game",
+  "sanitized": true,
+  "excluded": [
+    "server IP addresses and SSH credentials",
+    "private keys, seed phrases, RPC credentials",
+    "operator state and .env files",
+    "deployment archives and production release records",
+    "production contract identity/configuration files"
+  ],
+  "included": [
+    "Solidity contracts",
+    "web client and artwork",
+    "read-only service API",
+    "local tests",
+    "public protocol documentation"
+  ],
+  "mainnetSafety": "config/example.json uses zero addresses and local-development settings; do not use it for mainnet transactions.",
+  "license": "MIT"
+}

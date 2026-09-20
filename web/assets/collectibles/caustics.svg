@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640">
+<defs><filter id="water" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".013 .019" numOctaves="2" seed="12" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation=".8"/></filter><radialGradient id="fade"><stop stop-color="#e7fff8"/><stop offset="1" stop-color="#76bac2"/></radialGradient></defs>
+<g fill="none" stroke="url(#fade)" stroke-width="2" filter="url(#water)">
+<path d="M-40 65Q30 15 83 63T205 60T324 65T510 55M-30 150Q40 100 100 150T233 140T355 150T510 130M-40 235Q40 185 95 235T220 225T350 240T510 210M-30 320Q40 275 100 325T230 320T357 330T510 300M-40 410Q35 355 95 409T220 415T345 409T510 385M-40 510Q40 450 100 500T230 510T360 510T520 480M-40 610Q30 555 90 600T220 608T350 605T520 580"/>
+<path d="M80-30Q130 25 83 63T100 150T95 235T100 325T95 409T100 500T90 600T110 680M205-30Q160 25 205 60T233 140T220 225T230 320T220 415T230 510T220 608T230 680M325-30Q375 25 324 65T355 150T350 240T357 330T345 409T360 510T350 605T370 680"/>
+</g></svg>

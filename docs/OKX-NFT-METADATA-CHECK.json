@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "owner": "0x3E1d379cCE537a685B077c5429c866d180FE443b",
+    "uriPrefix": "data:application/json;base64,eyJuYW1lIjo",
+    "metadata": {
+      "name": "Bnbfish #1",
+      "description": "BNB Chain verifiable aquatic collectible",
+      "image": "https://bnbfish.trade/nft-images/1056.png",
+      "attributes": [
+        {
+          "trait_type": "Species ID",
+          "value": 1056
+        },
+        {
+          "trait_type": "Rarity",
+          "value": 3
+        },
+        {
+          "trait_type": "Length mm",
+          "value": 479
+        },
+        {
+          "trait_type": "Mass grams",
+          "value": 1717
+        },
+        {
+          "trait_type": "Quality bps",
+          "value": 7656
+        },
+        {
+          "trait_type": "Water",
+          "value": 0
+        },
+        {
+          "display_type": "date",
+          "trait_type": "Caught at",
+          "value": 1789457175
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "owner": "0x3E1d379cCE537a685B077c5429c866d180FE443b",
+    "uriPrefix": "data:application/json;base64,eyJuYW1lIjo",
+    "metadata": {
+      "name": "Bnbfish #2",
+      "description": "BNB Chain verifiable aquatic collectible",
+      "image": "https://bnbfish.trade/nft-images/1030.png",
+      "attributes": [
+        {
+          "trait_type": "Species ID",
+          "value": 1030
+        },
+        {
+          "trait_type": "Rarity",
+          "value": 0
+        },
+        {
+          "trait_type": "Length mm",
+          "value": 840
+        },
+        {
+          "trait_type": "Mass grams",
+          "value": 13720
+        },
+        {
+          "trait_type": "Quality bps",
+          "value": 7696
+        },
+        {
+          "trait_type": "Water",
+          "value": 0
+        },
+        {
+          "display_type": "date",
+          "trait_type": "Caught at",
+          "value": 1789457264
+        }
+      ]
+    }
+  }
+]

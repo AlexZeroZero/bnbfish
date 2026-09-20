@@ -1,0 +1,1 @@
+document.querySelector('select').onchange=e=>document.querySelectorAll('.card').forEach(c=>c.hidden=e.target.value!=='all'&&c.dataset.tier!==e.target.value);

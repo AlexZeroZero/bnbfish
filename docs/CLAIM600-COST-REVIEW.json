@@ -1,0 +1,35 @@
+{
+  "status": "LOCAL CANDIDATE ONLY; no deployment or production changes",
+  "intervalBlocks": 600,
+  "maxAwardsPerRound": 300,
+  "gasPriceGweiAssumption": 0.05,
+  "blockSecondsAssumption": 0.45,
+  "gasMeasured": {
+    "oneParticipantPrepare": 356125,
+    "allocation300From301ParticipantsTotal": 36956751,
+    "castSamples": [
+      249800,
+      215612
+    ],
+    "claimSamples": [
+      267050,
+      252750
+    ]
+  },
+  "fullRoundsPerDay": 320,
+  "maxDailyEntitlements": 96000,
+  "maxDailyOperatorAllocationBNBEstimate": 0.591308016,
+  "claimPerNFTBNBEstimateRange": [
+    1.26375e-05,
+    1.33525e-05
+  ],
+  "limitations": [
+    "Local Ganache gas samples, not mainnet billing",
+    "Sample allocation includes captureHash; 300 awards prepared over 15 transactions",
+    "Claim gas depends on initialized storage, ownership and species",
+    "Unclaimed awards reserve supply, not minted NFTs",
+    "Public preparation gas remains expensive; candidate is not a final low-cost architecture",
+    "Old/new combined supply and migration not decided",
+    "No additional signatures or mainnet transactions submitted"
+  ]
+}

@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const p='web/claim200-protocol.js';let s=fs.readFileSync(p,'utf8');
+s=s.replace("import {getLanguage}","import {CLAIM200_IDENTITY} from './claim200-identity.js';\nimport {getLanguage}");
+s=s.replace('新版是独立测试系列，与旧版 NFT 分开。','本网站仅展示当前独立测试系列的鱼获与记录。').replace('Новая тестовая коллекция независима от прежней.','Сайт показывает только текущую независимую тестовую коллекцию.').replace('旧版と独立したテストシリーズです。','本サイトは現在の独立テストシリーズのみを表示します。');
+s=s.replace('This independent test collection has its own cap.','This website shows only the current independent test collection.');
+s=s.replace('区块数不等于秒数。','区块数不等于秒数。目标区块产生并经过至少 3 个后续区块后，公共验证交易才可确认鱼获；交易延迟不改变原目标区块。').replace('Blocks are not seconds.','Blocks are not seconds. Verification can run after at least 3 blocks follow the target block; transaction delays do not change that target.').replace('Блоки не равны секундам.','Блоки не равны секундам. Проверка возможна через 3 блока после целевого; задержка транзакции не меняет цель.').replace('ブロック数は秒数ではありません。','ブロック数は秒数ではありません。対象の3ブロック後から検証可能です。取引の遅延で対象は変わりません。');
+s=s.replace('不等同于 VRF','并非不可操纵的随机源').replace('this is not VRF','it is not manipulation-proof').replace('это не VRF','это не защищённая от влияния случайность').replace('VRFではありません','完全に操作不能ではありません');
+const old="'<div class=\"protocol-formula\">60% · 1,200,000<br>25% · 500,000<br>7.5% · 150,000<br>5% · 100,000<br>2.5% · 50,000</div>'";
+s=s.replace(old,'quotaTable()');
+s=s.replace('<p class="nft-value-note">${t[14]}</p>', '<p class="protocol-intro">BNB Smart Chain · 56<br><a href="https://bscscan.com/address/${CLAIM200_IDENTITY.contract}" target="_blank" rel="noopener noreferrer" style="overflow-wrap:anywhere;font-size:11px">${CLAIM200_IDENTITY.contract}</a></p><p class="nft-value-note">${t[14]}</p>');
+s+='\nfunction quotaTable(){const lang=getLanguage();const labels={zh:["收藏等级","上限（份）","初始库存占比","普通","稀有","珍稀","罕见","极其罕见"],en:["Rarity","Quota","Initial share","Common","Rare","Precious","Exceptional","Legendary"],ru:["Редкость","Лимит","Доля запаса","Обычная","Редкая","Драгоценная","Исключительная","Легендарная"],ja:["レア度","上限","初期在庫比率","普通","レア","希少","極稀","伝説"]}[lang]||["收藏等级","上限（份）","初始库存占比","普通","稀有","珍稀","罕见","极其罕见"];return `<div class="protocol-table-wrap"><table><thead><tr>${labels.slice(0,3).map(x=>`<th>${x}</th>`).join("")}</tr></thead><tbody>${["1,200,000","500,000","150,000","100,000","50,000"].map((n,i)=>`<tr><td>${labels[i+3]}</td><td>${n}</td><td>${[60,25,7.5,5,2.5][i]}%</td></tr>`).join("")}</tbody></table></div>`;}\n';
+fs.writeFileSync(p,s);

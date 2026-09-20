@@ -1,0 +1,21 @@
+{
+  "chainId": 56,
+  "name": "BNB Smart Chain",
+  "rpcUrl": "https://bsc-dataseed.bnbchain.org",
+  "explorer": "https://bscscan.com",
+  "contract": "0x0000000000000000000000000000000000000000",
+  "deploymentBlock": 0,
+  "baitFeeBnb": "0",
+  "imageBase": "https://example.invalid/nft-images/",
+  "website": "http://localhost:4187",
+  "protocol": "claim200-reserved-v2",
+  "releaseStage": "local-development",
+  "releaseLabel": "Local development",
+  "protocolFeeWei": "0",
+  "feeRecipient": "0x0000000000000000000000000000000000000000",
+  "adminAddress": "0x0000000000000000000000000000000000000000",
+  "operatorAddress": "0x0000000000000000000000000000000000000000",
+  "rulesHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "runtimeCodeHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "local": true
+}

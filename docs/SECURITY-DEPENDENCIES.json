@@ -1,0 +1,78 @@
+{
+  "ws": [
+    {
+      "id": 1118728,
+      "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+      "title": "ws affected by a DoS when handling a request with many HTTP headers",
+      "severity": "high",
+      "vulnerable_versions": ">=8.0.0 <8.17.1",
+      "cwe": [
+        "CWE-476"
+      ],
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      }
+    },
+    {
+      "id": 1119108,
+      "url": "https://github.com/advisories/GHSA-58qx-3vcg-4xpx",
+      "title": "ws: Uninitialized memory disclosure",
+      "severity": "moderate",
+      "vulnerable_versions": ">=8.0.0 <8.20.1",
+      "cwe": [
+        "CWE-908"
+      ],
+      "cvss": {
+        "score": 4.4,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+      }
+    },
+    {
+      "id": 1123259,
+      "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+      "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+      "severity": "high",
+      "vulnerable_versions": ">=8.0.0 <8.21.0",
+      "cwe": [
+        "CWE-400",
+        "CWE-770",
+        "CWE-1050"
+      ],
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      }
+    }
+  ],
+  "tmp": [
+    {
+      "id": 1109537,
+      "url": "https://github.com/advisories/GHSA-52f5-9888-hmc6",
+      "title": "tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter",
+      "severity": "low",
+      "vulnerable_versions": "<=0.2.3",
+      "cwe": [
+        "CWE-59"
+      ],
+      "cvss": {
+        "score": 2.5,
+        "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
+      }
+    },
+    {
+      "id": 1120654,
+      "url": "https://github.com/advisories/GHSA-ph9p-34f9-6g65",
+      "title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+      "severity": "high",
+      "vulnerable_versions": "<0.2.6",
+      "cwe": [
+        "CWE-22"
+      ],
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      }
+    }
+  ]
+}

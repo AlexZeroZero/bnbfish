@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/",
+    "verified": true
+  },
+  {
+    "path": "/app.bundle.js?v=nft-api-entry-14",
+    "verified": true
+  },
+  {
+    "path": "/nft-api-entry.css?v=1",
+    "verified": true
+  },
+  {
+    "path": "/developers/nft/",
+    "verified": true
+  }
+]

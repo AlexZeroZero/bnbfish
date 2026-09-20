@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-15T03:56:36.435367+00:00",
+  "network": "isolated local EVM 1337 for automated tests; live BNB 56 read-only preflight",
+  "mainnetDeployed": false,
+  "rulesVersion": 2,
+  "totalCap": 2000000,
+  "species": 100,
+  "emptyBps": 2000,
+  "checks": [
+    "contract compile, runtime 15231 bytes",
+    "contract suite: 12 passed including FIFO and cap accounting",
+    "supply boundary suite: 1 passed, final NFT, no oversupply, pending drain",
+    "HTTP permit + EVM adapter + mint + NFT transfer: 1 passed",
+    "keeper and frontend catalog syntax checks"
+  ],
+  "limitations": [
+    "No live mainnet VRF callback verified",
+    "VRF subscription and service/image deployment configuration missing",
+    "FIFO cannot bypass a permanently missing earlier oracle response"
+  ]
+}

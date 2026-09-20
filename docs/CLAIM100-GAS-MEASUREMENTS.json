@@ -1,0 +1,55 @@
+{
+  "label": "Local cost baseline; NOT hash-only architecture",
+  "chainId": 1337,
+  "interval": 100,
+  "maxAwards": 50,
+  "gasPriceGweiAssumed": 0.05,
+  "blockSecondsAssumed": 0.45,
+  "scenarios": [
+    {
+      "participants": 1,
+      "awards": 1,
+      "castGasTotal": 249800,
+      "hashGas": 53418,
+      "allocationGas": 317952,
+      "allocationTransactions": 1,
+      "claimGasSamples": [
+        267050
+      ],
+      "publicGasPerRound": 371370,
+      "publicBNBPerFullDay": 0.03565152
+    },
+    {
+      "participants": 50,
+      "awards": 50,
+      "castGasTotal": 10814596,
+      "hashGas": 53418,
+      "allocationGas": 6521114,
+      "allocationTransactions": 3,
+      "claimGasSamples": [
+        267050,
+        269850,
+        252750
+      ],
+      "publicGasPerRound": 6574532,
+      "publicBNBPerFullDay": 0.6311550720000001
+    },
+    {
+      "participants": 51,
+      "awards": 50,
+      "castGasTotal": 11030208,
+      "hashGas": 53418,
+      "allocationGas": 6684061,
+      "allocationTransactions": 3,
+      "claimGasSamples": [
+        267050,
+        269850,
+        252750
+      ],
+      "publicGasPerRound": 6737479,
+      "publicBNBPerFullDay": 0.646797984
+    }
+  ],
+  "dailyBatchesAssumed": 1920,
+  "maxDailyEntitlements": 96000
+}

@@ -1,0 +1,26 @@
+{
+  "name": "bnbfish-bnb",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "start": "node service/server.mjs",
+    "devnet": "node scripts/devnet.mjs",
+    "mainnet:check": "node scripts/mainnet-preflight.mjs",
+    "build:blockhash": "node scripts/build-blockhash.mjs",
+    "test:blockhash": "node --test tests/blockhash.test.mjs tests/blockhash-boundary.test.mjs",
+    "prepare:blockhash": "node scripts/prepare-blockhash-candidate.mjs"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.4.0",
+    "ethers": "6.15.0",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.9",
+    "ganache": "7.9.2",
+    "solc": "0.8.30"
+  }
+}

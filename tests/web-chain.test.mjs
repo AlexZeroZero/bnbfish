@@ -1,0 +1,24 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {spawn} from 'node:child_process';import ganache from 'ganache';import {BrowserProvider,ContractFactory,Wallet,ZeroHash,parseEther,getBytes} from 'ethers';import {artifact,catalog,rulesHash} from '../scripts/shared.mjs';import {EvmClient,api,receipt} from '../web/evm-client.js';
+test('wallet-direct web adapter + read-only HTTP service + local EVM complete one fishing flow',async()=>{
+ const server=ganache.server({chain:{chainId:1337},wallet:{totalAccounts:4},logging:{quiet:true}});await server.listen(8548,'127.0.0.1');const provider=new BrowserProvider(server.provider);provider.pollingInterval=10;const admin=await provider.getSigner(0),accounts=Object.values(server.provider.getInitialAccounts()),authority=new Wallet(accounts[1].secretKey),player=new Wallet(accounts[2].secretKey),recipient=new Wallet(accounts[3].secretKey);let child;
+ const originalFetch=global.fetch;
+ try{
+  const deploy=async(name,args=[])=>{const a=artifact(name),c=await new ContractFactory(a.abi,a.bytecode,admin).deploy(...args);await c.waitForDeployment();return c;};
+  const vrf=await deploy('MockVRF'),fee=parseEther('0'),contract=await deploy('Bnbfish',[await admin.getAddress(),await vrf.getAddress(),ZeroHash,1,3,rulesHash,'ipfs://example/',catalog]);await (await contract.setPaused(false)).wait();
+  fs.mkdirSync('.runtime',{recursive:true});fs.writeFileSync('.runtime/api-test.json',JSON.stringify({chainId:1337,local:true,rpcUrl:'http://127.0.0.1:8548',contract:await contract.getAddress(),deploymentBlock:1,baitFeeBnb:'0',name:'TEST ONLY'}));
+  child=spawn(process.execPath,['service/server.mjs'],{env:{...process.env,PORT:'4192',Bnbfish_CONFIG:'.runtime/api-test.json',PERMIT_SIGNER_KEY:accounts[1].secretKey},stdio:['ignore','pipe','pipe']});
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('API startup timeout')),10000);child.stdout.on('data',d=>{if(d.toString().includes('Bnbfish BNB web')){clearTimeout(timer);resolve();}});child.once('exit',()=>{clearTimeout(timer);reject(Error('API exited'));});});
+  global.fetch=(url,opts)=>originalFetch(new URL(url,'http://127.0.0.1:4192/'),opts);
+  const client=new EvmClient();await client.init();const injected={request:async({method,params=[]})=>{if(method==='eth_requestAccounts'||method==='eth_accounts')return [player.address];if(method==='personal_sign')throw Error("Unexpected login signature");return server.provider.request({method,params});}};
+  await client.connect(injected);client.wallet.pollingInterval=10;client.reader.pollingInterval=10;assert.equal(client.address,player.address);assert.equal((await api('/api/status')).ready,true);
+  assert.equal((await fetch('/api/permit/challenge',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,404);
+  const quote=await client.prepareCast(0);assert.equal(quote.water,0);assert.ok(quote.gasCost>0n);
+  const tx=await client.sendCast(quote);await receipt(tx);const id=await contract.pendingRequest(player.address);assert.ok(id>0n);await client.prepareCast(0);
+  // Fixed local oracle word only; local test does not pretend to be a VRF proof.
+  const rid=await contract.ticketRound(id);while(BigInt(await server.provider.request({method:'eth_blockNumber',params:[]}))<await contract.roundEnd(rid))await server.provider.request({method:'evm_mine',params:[]});await(await contract.requestRound(rid)).wait();await (await vrf.fulfill((await contract.rounds(rid)).requestId,1,{gasLimit:1700000})).wait();assert.equal((await contract.casts(id)).state,3n);
+  const list=await client.holdings();const caught=(await contract.outcome(id))[1];assert.equal(list.length,caught?1:0);
+  if(caught){const q=await client.prepareTransfer(list[0].id,recipient.address);assert.equal(q.from,player.address);await receipt(await client.transfer(q));assert.equal(await contract.ownerOf(list[0].id),recipient.address);assert.equal((await client.holdings()).length,0);const outgoing=await client.nftActivity();assert.equal(outgoing.rows.filter(r=>r.kind==='mint').length,1);assert.equal(outgoing.rows.filter(r=>r.kind==='out').length,1);assert.equal(outgoing.rows[0].id,list[0].id);assert.ok(outgoing.rows[0].at>0);client.address=recipient.address;const incoming=await client.nftActivity();assert.equal(incoming.rows.length,1);assert.equal(incoming.rows[0].kind,'in');assert.equal(incoming.rows[0].from,player.address);client.address=player.address;}
+  const payment=await client.preparePayment(recipient.address,'0.000001');await receipt(await client.pay(payment));
+  const privateResponse=await fetch('/.env');assert.equal(privateResponse.status,404);assert.equal((await fetch('/config/production.json')).status,404);
+ }finally{global.fetch=originalFetch;child?.kill();await server.close();}
+});
