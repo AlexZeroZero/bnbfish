@@ -10,9 +10,9 @@
 
 | 湖面场景 / Lake scene | 鱼类图鉴 / Fish atlas | NFT 收藏卡 / NFT collection |
 |---|---|---|
-| ![湖面场景](docs/screenshots/01-lake-scene.png) | ![鱼类图鉴](docs/screenshots/02-fish-atlas.png) | ![NFT 收藏卡](docs/screenshots/03-nft-collection.png) |
+| ![湖面场景](docs/screenshots/01-live-home-lake.png) | ![鱼类图鉴](docs/screenshots/02-live-fish-records.png) | ![NFT 收藏卡](docs/screenshots/03-live-nft-collection.png) |
 
-这些是仓库素材和 UI 预览图，不代表链上资产状态。
+这些截图按 2026-09-20 线上版本使用的同源素材重新制作；截图用于界面展示，不代表链上资产状态。线上地址：https://bnbfish.trade/
 
 ## What is included / 项目内容
 
