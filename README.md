@@ -6,7 +6,15 @@
 
 > This project is for entertainment, collection and software development. NFTs have no promised economic value.
 
-## What is included
+## 游戏画面 / Screenshots
+
+| 湖面场景 / Lake scene | 鱼类图鉴 / Fish atlas | NFT 收藏卡 / NFT collection |
+|---|---|---|
+| ![湖面场景](docs/screenshots/01-lake-scene.png) | ![鱼类图鉴](docs/screenshots/02-fish-atlas.png) | ![NFT 收藏卡](docs/screenshots/03-nft-collection.png) |
+
+这些是仓库素材和 UI 预览图，不代表链上资产状态。
+
+## What is included / 项目内容
 
 - `contracts/` — Solidity contracts, fixed supply allocation and ERC-721 metadata.
 - `web/` — browser game UI, responsive layout, localization, card gallery and artwork.
@@ -49,6 +57,10 @@ Production deployment is intentionally excluded from this public repository. Kee
 ## NFT images and metadata
 
 The contract provides ERC-721 metadata. Card artwork is served as a web asset in this reference implementation. Integrators should read `tokenURI`, verify ownership with `ownerOf`, and treat image URLs as presentation assets. See [`web/developers/nft/index.html`](web/developers/nft/index.html).
+
+## Copyright and secondary development / 版权与二次开发
+
+中文和英文的版权、素材归属、Fork 与二次开发要求见 [`docs/COPYRIGHT-AND-SECONDARY-DEVELOPMENT.md`](docs/COPYRIGHT-AND-SECONDARY-DEVELOPMENT.md)。
 
 ## Security and privacy
 
