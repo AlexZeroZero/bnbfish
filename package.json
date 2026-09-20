@@ -11,16 +11,23 @@
     "mainnet:check": "node scripts/mainnet-preflight.mjs",
     "build:blockhash": "node scripts/build-blockhash.mjs",
     "test:blockhash": "node --test tests/blockhash.test.mjs tests/blockhash-boundary.test.mjs",
-    "prepare:blockhash": "node scripts/prepare-blockhash-candidate.mjs"
+    "prepare:blockhash": "node scripts/prepare-blockhash-candidate.mjs",
+    "app:sync": "pnpm build && cap sync android",
+    "app:open": "cap open android",
+    "app:debug": "pnpm build && cap run android"
   },
   "dependencies": {
+    "@capacitor/android": "7.4.3",
+    "@capacitor/core": "7.4.3",
     "@openzeppelin/contracts": "5.4.0",
     "ethers": "6.15.0",
     "express": "5.1.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "7.4.3",
     "esbuild": "0.25.9",
     "ganache": "7.9.2",
-    "solc": "0.8.30"
+    "solc": "0.8.30",
+    "typescript": "5.8.3"
   }
 }
