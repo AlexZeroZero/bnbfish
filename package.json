@@ -12,7 +12,7 @@
     "build:blockhash": "node scripts/build-blockhash.mjs",
     "test:blockhash": "node --test tests/blockhash.test.mjs tests/blockhash-boundary.test.mjs",
     "prepare:blockhash": "node scripts/prepare-blockhash-candidate.mjs",
-    "app:sync": "pnpm build && cap sync android",
+    "app:sync": "cap copy android && cap sync android",
     "app:open": "cap open android",
     "app:debug": "pnpm build && cap run android"
   },
