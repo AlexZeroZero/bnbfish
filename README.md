@@ -8,11 +8,21 @@
 
 ## 游戏画面 / Screenshots
 
-| 湖面场景 / Lake scene | 鱼类图鉴 / Fish atlas | NFT 收藏卡 / NFT collection |
-|---|---|---|
-| ![湖面场景](docs/screenshots/01-live-home-lake.png) | ![鱼类图鉴](docs/screenshots/02-live-fish-records.png) | ![NFT 收藏卡](docs/screenshots/03-live-nft-collection.png) |
+以下图片于 **2026-09-20** 直接截取自 [bnbfish.trade](https://bnbfish.trade/) 正在运行的网页，保留完整浏览器视口。全网渔汛数字仅代表截图时的状态。
 
-这些截图按 2026-09-20 线上版本使用的同源素材重新制作；截图用于界面展示，不代表链上资产状态。线上地址：https://bnbfish.trade/
+Captured directly from the running [live website](https://bnbfish.trade/) on **2026-09-20**, with the full browser viewport preserved. Catch statistics reflect the moment of capture.
+
+### 湖面与垂钓操作 / Lake and fishing controls
+
+![线上首页：月影湖、鱼竿、底部操作栏及全网渔汛 / Live homepage](docs/screenshots/live-20260920-home.png)
+
+### 鱼篓中的水生图鉴 / Aquatic encyclopedia in the basket panel
+
+![线上水生图鉴：100个物种、稀有度筛选和鱼类卡片 / Live aquatic encyclopedia](docs/screenshots/live-20260920-encyclopedia.png)
+
+截图时未连接钱包；图鉴展示物种资料，不代表个人已持有的 NFT。图片来源及界面状态见 [截图说明 / Screenshot provenance](docs/screenshots/README.md)。
+
+The wallet was disconnected. Encyclopedia cards describe species, not NFTs owned by a player. See [screenshot provenance](docs/screenshots/README.md).
 
 ## What is included / 项目内容
 
